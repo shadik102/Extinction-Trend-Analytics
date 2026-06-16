@@ -14,4 +14,4 @@ jobs:
         env:
           APP_URL: ${{ secrets.STREAMLIT_APP_URL }}
         run: |
-          curl -L "$APP_URL"
+          curl --max-redirs 10 -I "$APP_URL"
